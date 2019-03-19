@@ -1,0 +1,30 @@
+{
+  "name": "shadowsocks-heroku",
+  "description": "Deploy shadowsocks-libev to Heroku.",
+  "stack": "container",
+  "env": {
+    "SS_PORT": {
+      "value": "2080",
+      "description": "shadowsocks server port.",
+      "required": true
+    },
+    "SS_PASSWORD": {
+      "value": "heroku",
+      "description": "shadowsocks password.",
+      "required": true
+    },
+    "SS_METHOD": {
+      "value": "chacha20-ietf-poly1305",
+      "description": "shadowsocks encryption method.",
+      "required": true
+    },
+    "SS_TIMEOUT": {
+      "description": "shadowsocks timeout, unit: second.",
+      "required": false
+    },
+    "SS_MTU": {
+      "description": "shadowsocks mtu size.",
+      "required": false
+    }
+  }
+}
