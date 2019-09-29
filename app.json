@@ -4,26 +4,26 @@
   "stack": "container",
   "env": {
     "SS_PORT": {
-      "value": "2080",
-      "description": "shadowsocks server port.",
+      "value": "1984",
+      "description": "shadowsocks-libev server port.",
       "required": true
     },
     "SS_PASSWORD": {
-      "value": "heroku",
-      "description": "shadowsocks password.",
+      "value": "bigbrother",
+      "description": "shadowsocks-libev password.",
       "required": true
     },
     "SS_METHOD": {
       "value": "chacha20-ietf-poly1305",
-      "description": "shadowsocks encryption method.",
+      "description": "shadowsocks-libev encrypt method.",
       "required": true
     },
     "SS_TIMEOUT": {
-      "description": "shadowsocks timeout, unit: second.",
+      "description": "shadowsocks-libev timeout, unit: seconds.",
       "required": false
     },
     "SS_MTU": {
-      "description": "shadowsocks mtu size.",
+      "description": "shadowsocks-libev mtu size.",
       "required": false
     }
   }

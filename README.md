@@ -12,11 +12,11 @@ user <---> shadowsocks client <---> chisel client <---> chisel server <---> shad
 
 Variable | Default value | Description
 --- | --- | ---
-`SS_PORT` | `2080` | shadowsocks server port
-`SS_PASSWORD` | `heroku` | shadowsocks password
-`SS_METHOD` | `chacha20-ietf-poly1305` | shadowsocks encryption method
-`SS_TIMEOUT` | `300` | shadowsocks timeout, unit: `second`
-`SS_MTU` | `1500` | shadowsocks mtu size
+`SS_PORT` | `1984` | shadowsocks-libev server port
+`SS_PASSWORD` | `bigbrother` | shadowsocks-libev password
+`SS_METHOD` | `chacha20-ietf-poly1305` | shadowsocks-libev encrypt method
+`SS_TIMEOUT` | `600` | shadowsocks-libev timeout, unit: seconds
+`SS_MTU` | `1500` | shadowsocks-libev mtu size
 
 ## Deploy
 
@@ -42,7 +42,7 @@ Click this button:
 
 ```bash
 # chisel client
-chisel client --keepalive 5m https://<app_name>.herokuapp.com <ss_port>
+chisel client --keepalive 10m https://<app_name>.herokuapp.com <ss_port>
 
 # shadowsocks client
 ss-local -s 127.0.0.1 -p <ss_port> -k <ss_password> -m <ss_method> -l <local_port> -u
