@@ -38,17 +38,25 @@ heroku logs
 Click this button:  
 [![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pexcn/shadowsocks-heroku)
 
-## Usage
+## Client
+
+Refer to the [docs](https://github.com/jpillora/chisel#usage) of chisel:
+> ```bash
+> - local-host defaults to 0.0.0.0 (all interfaces).
+> - local-port defaults to remote-port.
+> - remote-port is required*.
+> - remote-host defaults to 0.0.0.0 (server localhost).
+> ```
 
 ```bash
 # chisel client
-chisel client --keepalive 10m https://<app_name>.herokuapp.com <ss_port>
+chisel client --keepalive 10m https://<app_name>.herokuapp.com [chisel_local_host]:[chisel_local_port]:[ss_remote_host]:<ss_remote_port>
 
 # shadowsocks client
-ss-local -s 127.0.0.1 -p <ss_port> -k <ss_password> -m <ss_method> -l <local_port> -u
+ss-local -s <chisel_local_host> -p <chisel_local_port> -k <ss_password> -m <ss_method> -l <ss_local_port>
 ```
 
-Point of your SOCKS5 clients to `127.0.0.1:<local_port>`
+Point of your SOCKS5 clients to `127.0.0.1:<ss_local_port>`
 
 ## Reference
 
