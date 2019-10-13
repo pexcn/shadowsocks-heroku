@@ -9,7 +9,7 @@ COPY bin/goreman /usr/local/bin/goreman
 RUN useradd -m heroku
 USER heroku
 
-# copy to current work dir
+# copy to work dir
 WORKDIR /home/heroku
 COPY Procfile Procfile
 
