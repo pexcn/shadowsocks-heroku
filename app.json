@@ -1,0 +1,22 @@
+{
+  "name": "shadowsocks-heroku",
+  "description": "Deploy shadowsocks-rust with v2ray-plugin to Heroku.",
+  "stack": "container",
+  "env": {
+    "SS_DOMAIN": {
+      "value": "example.herokuapp.com",
+      "description": "heroku app domain",
+      "required": true
+    },
+    "SS_PASSWORD": {
+      "value": "password",
+      "description": "shadowsocks-rust password.",
+      "required": true
+    },
+    "SS_ENCRYPT_METHOD": {
+      "value": "chacha20-ietf-poly1305",
+      "description": "shadowsocks-rust encrypt method.",
+      "required": true
+    }
+  }
+}
