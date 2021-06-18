@@ -1,12 +1,6 @@
 # shadowsocks-heroku
 
-## Intro
-
-### Data flow
-
-```
-user <---> shadowsocks with v2ray-plugin client <---> shadowsocks with v2ray-plugin server <---> target
-```
+## Usage
 
 ### Environment variable
 
@@ -15,7 +9,11 @@ Variable | Default value | Description
 `SS_PASSWORD` | `password` | shadowsocks password
 `SS_ENCRYPT` | `chacha20-ietf-poly1305` | shadowsocks encrypt method
 
-## Deploy
+### One-click deployment
+
+[![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pexcn/shadowsocks-heroku)
+
+### Manually deployment
 
 ```bash
 # deploy
@@ -30,7 +28,6 @@ heroku ps
 heroku logs
 ```
 
-**OR**
+## Credits
 
-Click this button:  
-[![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pexcn/shadowsocks-heroku)
+- https://github.com/shadowsocks/shadowsocks-rust

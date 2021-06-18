@@ -4,8 +4,8 @@ USER root
 
 ENV SS_PASSWORD=
 ENV SS_ENCRYPT=
-ENV TFO_COMPAT=1
 
+ENV TFO_COMPAT=1
 EXPOSE $PORT
 CMD ss-server \
       -s 0.0.0.0 \
