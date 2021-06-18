@@ -31,8 +31,6 @@ heroku logs
 ### Tips
 
 ```bash
-### Tips
-
 #
 # simple-obfs -> 80
 #
