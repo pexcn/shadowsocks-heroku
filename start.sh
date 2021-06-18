@@ -6,7 +6,7 @@ exec ss-server \
   -k $SS_PASSWORD \
   -m $SS_ENCRYPT \
   -t 3600 \
-  -n 1048576 \
+  -d 8.8.8.8,8.8.4.4 \
   -u \
   --reuse-port \
   --fast-open \
