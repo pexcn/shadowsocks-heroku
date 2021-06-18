@@ -4,7 +4,7 @@
   "stack": "container",
   "env": {
     "SS_PASSWORD": {
-      "value": "password",
+      "value": "freedom_is_not_free",
       "description": "shadowsocks password.",
       "required": true
     },

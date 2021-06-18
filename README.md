@@ -6,7 +6,7 @@
 
 Variable | Default value | Description
 --- | --- | ---
-`SS_PASSWORD` | `password` | shadowsocks password
+`SS_PASSWORD` | `freedom_is_not_free` | shadowsocks password
 `SS_ENCRYPT` | `chacha20-ietf-poly1305` | shadowsocks encrypt method
 
 ### One-click deployment
@@ -23,7 +23,7 @@ heroku git:remote -a <app_name>
 heroku stack:set container
 git push heroku master
 
-# check status
+# check
 heroku ps
 heroku logs
 ```
