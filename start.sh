@@ -1,15 +1,17 @@
 #!/bin/sh
 
-exec ss-server \
-  -s 0.0.0.0 \
-  -p $PORT \
-  -k $SS_PASSWORD \
-  -m $SS_ENCRYPT \
-  -t 3600 \
-  -d 8.8.8.8,8.8.4.4 \
-  -u \
-  --reuse-port \
-  --fast-open \
-  --no-delay \
+exec ssserver \
+  --server-addr 0.0.0.0:$PORT \
+  --password $SS_PASSWORD \
+  --encrypt-method $SS_ENCRYPT \
+  --dns udp://8.8.8.8,8.8.4.4 \
+  --timeout 3600 \
+  --udp-timeout 300 \
+  --udp-max-associations 1024 \
+  --nofile 1048576 \
+  --tcp-keep-alive 300 \
+  --tcp-fast-open \
+  --tcp-no-delay \
+  -U \
   --plugin "xray-plugin" \
   --plugin-opts "server;fast-open"

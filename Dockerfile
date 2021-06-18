@@ -1,10 +1,9 @@
-FROM pexcn/docker-images:shadowsocks-libev
+FROM pexcn/docker-images:shadowsocks-rust
 
 COPY start.sh /usr/local/bin/
 
 ENV SS_PASSWORD=
 ENV SS_ENCRYPT=
 
-ENV TFO_COMPAT=1
 EXPOSE $PORT
 CMD ["start.sh"]
