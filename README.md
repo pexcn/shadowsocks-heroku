@@ -12,8 +12,8 @@ user <---> shadowsocks with v2ray-plugin client <---> shadowsocks with v2ray-plu
 
 Variable | Default value | Description
 --- | --- | ---
-`SS_PASSWORD` | `password` | shadowsocks-rust password
-`SS_METHOD` | `chacha20-ietf-poly1305` | shadowsocks-rust encrypt method
+`SS_PASSWORD` | `password` | shadowsocks password
+`SS_ENCRYPT` | `chacha20-ietf-poly1305` | shadowsocks encrypt method
 
 ## Deploy
 

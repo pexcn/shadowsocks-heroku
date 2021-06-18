@@ -1,10 +1,22 @@
-FROM pexcn/docker-images:shadowsocks-rust
+FROM pexcn/docker-images:shadowsocks-libev
 
 USER root
 
-ENV SS_DOMAIN=example.herokuapp.com
-ENV SS_PASSWORD=password
-ENV SS_METHOD=chacha20-ietf-poly1305
+ENV SS_PASSWORD=
+ENV SS_ENCRYPT=
+ENV TFO_COMPAT=1
 
 EXPOSE $PORT
-CMD ["ssserver", "--server-addr 0.0.0.0:$PORT", "--password $SS_PASSWORD", "--encrypt-method $SS_METHOD", "--timeout 3600", "--udp-timeout 300", "--udp-max-associations 512", "--nofile 1048576", "--tcp-fast-open", "--tcp-no-delay", "-U", "--plugin xray-plugin", "--plugin-opts server;tls;fast-open;host=$SS_DOMAIN"]
+CMD ss-server \
+      -s 0.0.0.0 \
+      -p $PORT \
+      -k $SS_PASSWORD \
+      -m $SS_ENCRYPT \
+      -t 3600 \
+      -n 1048576 \
+      -u \
+      --reuse-port \
+      --fast-open \
+      --no-delay \
+      --plugin "xray-plugin" \
+      --plugin-opts "server;fast-open"
