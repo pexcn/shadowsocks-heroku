@@ -28,6 +28,42 @@ heroku ps
 heroku logs
 ```
 
+### Tips
+
+```bash
+### Tips
+
+#
+# simple-obfs -> 80
+#
+# server
+obfs=http;fast-open
+# client
+obfs=http;obfs-host=appname.herokuapp.com;fast-open
+
+#
+# v2ray-plugin/xray-plugin -> 443
+#
+# server
+server;fast-open
+# client
+tls;fast-open;host=appname.herokuapp.com;mux=5;loglevel=none
+
+#
+# cloudflare workers code snippet
+#
+addEventListener(
+  "fetch", event => {
+    let url = new URL(event.request.url);
+    url.hostname = "appname.herokuapp.com";
+    let request = new Request(url, event.request);
+    event.respondWith(
+      fetch(request)
+    )
+  }
+)
+```
+
 ## Credits
 
 - https://github.com/shadowsocks/shadowsocks-rust
