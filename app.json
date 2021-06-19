@@ -1,6 +1,6 @@
 {
   "name": "shadowsocks-heroku",
-  "description": "Deploy shadowsocks with v2ray-plugin to Heroku.",
+  "description": "Deploy shadowsocks server to Heroku.",
   "stack": "container",
   "env": {
     "SS_PASSWORD": {
@@ -11,7 +11,17 @@
     "SS_ENCRYPT": {
       "value": "chacha20-ietf-poly1305",
       "description": "shadowsocks encrypt method.",
-      "required": true
+      "required": false
+    },
+    "SS_PLUGIN": {
+      "value": "xray-plugin",
+      "description": "shadowsocks sip003 plugin.",
+      "required": false
+    },
+    "SS_PLUGIN_OPTS": {
+      "value": "server;fast-open",
+      "description": "shadowsocks sip003 plugin options.",
+      "required": false
     }
   }
 }
