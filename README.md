@@ -1,5 +1,7 @@
 # shadowsocks-heroku
 
+Deploy shadowsocks server to Heroku.
+
 ## Usage
 
 ### Environment variable

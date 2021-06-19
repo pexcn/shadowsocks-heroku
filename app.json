@@ -1,6 +1,6 @@
 {
   "name": "shadowsocks-heroku",
-  "description": "Deploy shadowsocks with v2ray-plugin to Heroku.",
+  "description": "Deploy shadowsocks server to Heroku.",
   "stack": "container",
   "env": {
     "SS_PASSWORD": {
