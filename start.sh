@@ -13,5 +13,5 @@ exec ssserver \
   --tcp-fast-open \
   --tcp-no-delay \
   -U \
-  --plugin "xray-plugin" \
-  --plugin-opts "server;fast-open"
+  --plugin "$SS_PLUGIN" \
+  --plugin-opts "$SS_PLUGIN_OPTS"

@@ -10,6 +10,8 @@ Variable | Default value | Description
 --- | --- | ---
 `SS_PASSWORD` | `freedom_is_not_free` | shadowsocks password
 `SS_ENCRYPT` | `chacha20-ietf-poly1305` | shadowsocks encrypt method
+`SS_PLUGIN` | `xray-plugin` | shadowsocks sip003 plugin
+`SS_PLUGIN_OPTS` | `server;fast-open` | shadowsocks sip003 plugin options
 
 ### One-click deployment
 
