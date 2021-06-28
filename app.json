@@ -19,7 +19,7 @@
       "required": false
     },
     "SS_PLUGIN_OPTS": {
-      "value": "server;fast-open",
+      "value": "server;fast-open;mode=grpc",
       "description": "shadowsocks sip003 plugin options.",
       "required": false
     }
